@@ -8,3 +8,6 @@
 | 2026-06-05 | 실험실 구조를 pi_based_ai_coding_agent_prompt_pack.md 기반으로 생성 | 원본 문서가 체계적인 프롬프트 팩과 실험 시나리오를 이미 포함 | 프롬프트 16개, policies 3개, experiments 2개 생성 |
 | 2026-06-05 | sample-spring-api에 의도적 문제 7가지 삽입 | 도구 비교 벤치마크 시 발견 능력, 수정 범위, 테스트 품질 측정 목적 | N+1, 테스트 누락, 예외 불일치, DTO 미사용, Controller 로직, Tx 누락, PII 로그 |
 | 2026-06-05 | AI-네이티브 스타트업 프레임워크를 OPERATING-GUIDE.md로 반영 | 실험실 운영에 체계적 피드백 루프와 eval 시스템 필요 | 6단계 프레임워크, 자율성 레벨, 주간 리뷰 체크리스트 도입 |
+| 2026-06-05 | **lab의 역할을 "독립 샌드박스 실험실" → "주력 프로젝트의 AI 개발 컨트롤 플레인"으로 재정의** | 자동화의 회수 가치는 샌드박스가 아니라 실제 주력 프로젝트(pact-conference, bf/workspace)에 있음. 샌드박스에서만 검증하면 회수 시간 0 | 방법론·eval·규율은 lab에 자산으로 남기고, AGENTS.md·프롬프트팩·가드레일은 각 주력 프로젝트로 이식. 샌드박스는 "프로덕션 적용 전 스테이징"으로 강등 |
+| 2026-06-05 | **첫 다리로 pact-conference-api-harness 선택** | 이름부터 harness로 lab 주제와 일치, 개인·저위험, gradlew 존재 | pact-conference 루트에 코드 기반 AGENTS.md 생성(검증 완료). bf/workspace는 다음 단계 |
+| 2026-06-05 | **리스크 등급 분리: pact=개인(자유), bf/workspace=운영/회사(보수)** | bf는 프로덕션·Jenkins/CI 자산 | bf에는 읽기·제안만, 자동 머지·프로덕션 쓰기 금지. pact는 자율성 레벨 상향 가능 |
