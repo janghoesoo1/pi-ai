@@ -1,0 +1,29 @@
+# Dependencies
+node_modules/
+.next/
+out/
+
+# Build
+build/
+.gradle/
+*.class
+
+# IDE
+.idea/
+*.iml
+.vscode/
+
+# Environment
+.env
+.env.local
+.env*.local
+
+# OS
+.DS_Store
+Thumbs.db
+
+# OMC state
+.omc/
+
+# Logs
+*.log

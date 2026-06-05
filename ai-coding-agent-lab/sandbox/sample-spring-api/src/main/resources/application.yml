@@ -1,0 +1,50 @@
+spring:
+  profiles:
+    active: h2
+
+---
+spring:
+  config:
+    activate:
+      on-profile: h2
+  datasource:
+    url: jdbc:h2:mem:lab_db
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+  h2:
+    console:
+      enabled: true
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+    defer-datasource-initialization: true
+  sql:
+    init:
+      mode: always
+
+logging:
+  level:
+    com.example.lab: DEBUG
+
+---
+spring:
+  config:
+    activate:
+      on-profile: mysql
+  datasource:
+    url: jdbc:mysql://localhost:3306/lab_db
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
