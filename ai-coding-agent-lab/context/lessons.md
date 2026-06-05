@@ -12,3 +12,5 @@
 | 2026-06-05 | **Kotlin+JPA 표준 셋업 체크리스트 도출**: `kotlin("plugin.jpa")`(no-arg) 필수, 엔티티는 var+nullable 기본값, 프로파일별 autoconfigure exclude 충돌 주의. 이건 향후 pact/유사 Kotlin 프로젝트 AGENTS.md·프롬프트팩에 재사용할 자산 | 동상 |
 | 2026-06-05 | **스캐폴딩 도구 산출물은 반드시 전체 빌드로 검증.** harness.sh가 gateway ProxyController에 주입한 `@Value("${...}")`의 `$` 미escape로 gateway 컴파일이 깨졌는데, 스캐폴드 직후 `:room-service:build`만 그린이라 놓침. 스캐폴드는 횡단(gateway 등)도 수정하므로 `./gradlew build` 전체로 검증해야 함 | room-service 완성(2번째 eval) |
 | 2026-06-05 | **`git add -A` 금지, 명시적 스테이징.** pi-ai에서 동시 세션 산출물이, bf에서 OMC state 노이즈가 워킹트리에 있었음. 항상 의도한 파일만 `git add <path>` | pi-ai/bf 커밋 |
+| 2026-06-05 | **harness gateway 버그 근본원인 = sed `a\` 이스케이프 소실.** `\${...}`의 백슬래시가 bash→sed를 거치며 사라져 Kotlin 보간 유발. 취약한 sed를 python literal 삽입으로 교체하니 안정화. **코드 생성 도구는 sed보다 명시적 언어(python)로 literal을 쓰는 게 견고.** | harness.sh 근본 수정(PR #6) |
+| 2026-06-05 | **회사 인프라 푸시는 막힐 수 있다.** bf 사내 GitLab이 pre-receive 훅 500으로 푸시 거부(author 이메일은 정상). 회사 정책/훅은 우회하지 말고 사람에게 위임. 가드레일이 실제로 작동한 사례 | bf 푸시 차단 |

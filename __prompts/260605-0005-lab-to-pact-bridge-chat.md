@@ -86,3 +86,13 @@ AGENTS.md 빌드 섹션을 "수정 완료 + 향후 새 JPA 서비스 추가 시 
 **3. bf AGENTS.md**: 운영 코드라 read-only로 컨벤션 파악(ApiResponse `ok/fail`, BusinessException+ErrorCode enum, BaseEntity 감사·soft delete, 암호화 컨버터, DDD 모듈). 보수적 AGENTS.md를 `docs/agents-md` 브랜치에 **AGENTS.md만** 커밋(노이즈 제외). **회사 리모트 미푸시** — 사람 승인 대기.
 
 교훈 추가: 스캐폴드 산출물은 전체 빌드로 검증(단일 모듈만 보면 gateway 회귀 놓침), `git add -A` 금지·명시적 스테이징.
+
+## 사용자
+1,2,3 (PR 머지 + bf 푸시 + harness 근본수정)
+
+## AI (수행 결과)
+**1. PR 머지**: pact PR #4·#5 머지 → main 반영, 원격 브랜치 정리.
+**2. bf 푸시**: 사내 GitLab(`58.230.178.251:180`) 푸시 시도 → **pre-receive 훅 500으로 거부**. author 이메일은 정상(gmail, main과 동일). 회사 정책/훅 문제라 **우회하지 않고** 로컬 커밋 유지 — 사람이 정식 프로세스로 푸시 필요. (가드레일이 실제 작동한 사례)
+**3. harness.sh 근본 수정**: gateway `@Value` 이스케이프 버그의 원인(sed `a\`가 백슬래시 소실)을 python literal 삽입으로 교체 + 중복 가드 + 전체빌드 검증 안내. 임시 probe 스캐폴딩으로 검증(`\${` 정상, gateway 컴파일 성공) 후 revert. PR #6 생성·머지.
+
+최종: pact는 PR #4·#5·#6 머지로 안정화. bf는 AGENTS.md 로컬 커밋(푸시 차단). lab은 eval 2건+교훈+결정 누적.

@@ -26,6 +26,7 @@
 - (2026-06-05) `new-service`가 5개 횡단 관심사(gradle·gateway·k8s·prometheus·기동스크립트)를 단일 명령으로 일관 배선. dry-run이 실제와 정확히 일치 → 승인 게이트로 적합. L4 수준 신뢰.
 - 한계: 산출 store가 untyped Map + TODO, 테스트 미생성, `.bak` 잔여. "동작하는 골격"이지 완성품 아님.
 - 개선 후보: 기본 테스트 생성, `.bak` 자동정리, `--jpa` 플래그(kotlin-jpa+exclude 해제 자동).
+- (2026-06-05) gateway `@Value` 이스케이프 버그 **근본 수정 완료**(PR #6 머지): sed→python literal. 향후 스캐폴드는 gateway 컴파일 정상.
 
 ## 공통 패턴
 - (2026-06-05) **AGENTS.md는 코드에서 역도출하라.** 스캐폴딩 CLI/빌드설정에 컨벤션이 이미 인코딩돼 있으면 그게 1차 출처.
