@@ -10,3 +10,5 @@
 | 2026-06-05 | **lab 자기 모순 발견.** lab-overview는 "회사 코드 금지(sandbox만)"인데 정작 가치는 주력 프로젝트에 있음. 안전 규칙(가드레일)과 가치 회수 대상을 분리해야 함 — 회사 코드엔 보수적 가드레일, 개인 코드엔 자율성 | 방향 재정의 |
 | 2026-06-05 | **"빌드 복구"는 한 번에 안 끝난다 — 양파 까기다.** pact-conference 빌드를 살리는 과정에서 4겹의 독립 버그가 순차로 드러남: (1)wrapper jar 누락 (2)Java toolchain 미고정→JVM타깃 21/24 충돌 (3)jpa 프로파일에서 `spring.autoconfigure.exclude` 미해제→JPA빈 누락 (4)`kotlin("plugin.jpa")` 미적용→엔티티 no-arg 생성자 없음. 각 수정이 다음 겹을 드러냄. **교훈: 한 번 통과를 성공으로 보지 말고, 매번 실제 실패 메시지의 근본원인까지 추적할 것** | pact 빌드 복구 (lab 첫 실제 실험) |
 | 2026-06-05 | **Kotlin+JPA 표준 셋업 체크리스트 도출**: `kotlin("plugin.jpa")`(no-arg) 필수, 엔티티는 var+nullable 기본값, 프로파일별 autoconfigure exclude 충돌 주의. 이건 향후 pact/유사 Kotlin 프로젝트 AGENTS.md·프롬프트팩에 재사용할 자산 | 동상 |
+| 2026-06-05 | **스캐폴딩 도구 산출물은 반드시 전체 빌드로 검증.** harness.sh가 gateway ProxyController에 주입한 `@Value("${...}")`의 `$` 미escape로 gateway 컴파일이 깨졌는데, 스캐폴드 직후 `:room-service:build`만 그린이라 놓침. 스캐폴드는 횡단(gateway 등)도 수정하므로 `./gradlew build` 전체로 검증해야 함 | room-service 완성(2번째 eval) |
+| 2026-06-05 | **`git add -A` 금지, 명시적 스테이징.** pi-ai에서 동시 세션 산출물이, bf에서 OMC state 노이즈가 워킹트리에 있었음. 항상 의도한 파일만 `git add <path>` | pi-ai/bf 커밋 |

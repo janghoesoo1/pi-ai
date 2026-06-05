@@ -76,3 +76,13 @@ AGENTS.md 빌드 섹션을 "수정 완료 + 향후 새 JPA 서비스 추가 시 
 **3. bf/workspace 파악 + 보수적 가드레일**: read-only 파악 — Kotlin DDD 멀티모듈(api/common/domain-ai·employee·mail·timesheet) + React/Vite 프론트, Jenkins/GitLab CI, 운영 HR SaaS(제품이 Claude 사용). `.env` 미추적 확인(보안 위생 양호). 운영 코드라 파일 미수정, lab `proposals/bf-workspace-AGENTS-draft.md`에 보수적 AGENTS.md 초안 제시(자동머지·프로덕션쓰기·CI/DB/시크릿 접근 금지, 기본 L2).
 
 핵심: lab이 "빈 골격"에서 처음으로 실제 자산(AGENTS.md·eval·tool-insights·proposals)으로 채워짐. pact는 그린+커밋, bf는 보수적 진입 준비.
+
+## 사용자
+1,2,3 (푸시/PR + room 완성 + bf 적용)
+
+## AI (수행 결과)
+**1. pact 빌드 복구 PR**: `fix/build-recovery` 푸시 → PR #4.
+**2. room-service 완성**: untyped Map → typed(`common/model/Room` + Store/DTO/Controller, ApiResponse 엔벨로프, @Valid 검증). RoomControllerTest 7건 통과. **전체 빌드에서 gateway 회귀 발견** — harness.sh가 주입한 ProxyController `@Value("${...}")`의 `$` 미escape 버그 수정. 전체 그린. 2번째 eval 기록(`2026-06-05-claudecode-room-typed.md`). 푸시 → PR #5.
+**3. bf AGENTS.md**: 운영 코드라 read-only로 컨벤션 파악(ApiResponse `ok/fail`, BusinessException+ErrorCode enum, BaseEntity 감사·soft delete, 암호화 컨버터, DDD 모듈). 보수적 AGENTS.md를 `docs/agents-md` 브랜치에 **AGENTS.md만** 커밋(노이즈 제외). **회사 리모트 미푸시** — 사람 승인 대기.
+
+교훈 추가: 스캐폴드 산출물은 전체 빌드로 검증(단일 모듈만 보면 gateway 회귀 놓침), `git add -A` 금지·명시적 스테이징.
