@@ -14,6 +14,7 @@ lab은 "독립 샌드박스 실험실"이 아니라 **주력 프로젝트의 AI 
 |----------|------|------|----------------|------|
 | pact-conference-api-harness | `~/work/pact-conference-api-harness` | Kotlin/SpringBoot3 멀티서비스 + Pact + harness.sh | 개인·저위험 → 자율성 상향 가능 | **AGENTS.md 생성 + 빌드 복구(4겹 버그 수정, 전체 그린) 완료** |
 | bf/workspace | `~/bf/workspace` | Kotlin DDD 백엔드(api/common/domain-ai·employee·mail·timesheet) + React/Vite 프론트 + Jenkins/GitLab CI, 운영 HR SaaS(제품이 Claude 사용) | 운영/회사 → 읽기·제안만, 자동머지·프로덕션 쓰기 금지 | **코드 기반 AGENTS.md 작성 → `docs/agents-md` 브랜치 커밋(미푸시, 사람 승인 대기)** |
+| bf/ata-next-kotlin | `~/bf/ata-next-kotlin` | Next.js 프론트 + Kotlin 백엔드 풀스택, Jenkins + 사내 GitLab(`bf.jang1/ata-next-kotlin`), 코드 생성형 제품 추정 | 운영/회사 → 읽기·제안만, 자동머지·프로덕션 쓰기 금지 | **레지스트리 등록만. AGENTS.md 미생성 — 해당 폴더에서 직접 생성 예정(cross-folder 금지)** |
 
 ## 현재 상태
 - 실험실 구조 생성 완료 (2026-06-05)
