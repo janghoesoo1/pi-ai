@@ -19,12 +19,13 @@ ai-coding-agent-lab/
   README.md
   AGENTS.md
   OPERATING-GUIDE.md
-  prompts/
+  prompts/                       # 프롬프트 17개 (00~16). 전체 목록은 아래 "프롬프트 팩 목록" 표 참조
     00-research.md
     01-tool-evaluation.md
-    02-pi-extension-design.md
-    03-code-review.md
-    04-spring-refactoring.md
+    02-pi-lab-design.md
+    03-agents-md-generator.md
+    04-spring-review-skill.md
+    ...                          # 05~16 (총 17개)
   context/
     lab-overview.md
     tool-insights.md
@@ -33,9 +34,13 @@ ai-coding-agent-lab/
   sandbox/
     sample-spring-api/
     sample-react-app/
-  experiments/
-    2026-06-05-pi-vs-aider.md
+  experiments/                   # 실험 기록 6개 (YYYY-MM-DD-tool-task.md)
+    2026-06-05-claudecode-discovery.md
+    2026-06-05-claudecode-n1-plan.md
+    2026-06-05-claudecode-scaffold-room.md
+    2026-06-05-claudecode-room-typed.md
     2026-06-05-pi-extension.md
+    2026-06-05-pi-vs-aider.md
   policies/
     allowed-commands.md
     denied-commands.md
@@ -86,7 +91,7 @@ ai-coding-agent-lab/
 
 ### Day 2: AGENTS.md 만들기
 
-1. `prompts/03-code-review.md` 기반 프롬프트 실행 (Prompt 03)
+1. `prompts/03-agents-md-generator.md` 기반 프롬프트 실행 (Prompt 03)
 2. Context Engineering 프롬프트 실행 (Prompt 11)
 3. 사람이 AGENTS.md 검토
 4. 금지 명령 추가

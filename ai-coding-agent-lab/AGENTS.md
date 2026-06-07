@@ -24,7 +24,7 @@ AI 코딩 에이전트 실험실. Pi를 기반으로 여러 AI 코딩 도구를 
 - Java 17+
 - Spring Boot 3.x
 - JPA / Hibernate
-- MySQL
+- H2 (기본 인메모리 프로파일, `spring.profiles.active: h2`) / MySQL (선택 프로파일)
 
 실험 대상 (frontend):
 - React
@@ -55,7 +55,13 @@ AI 도구:
 
 ## Build and Test Commands
 
+> ⚠️ 현재 `sandbox/sample-spring-api`에는 gradle wrapper(`gradlew`/`gradle/wrapper/*.jar`)가 포함돼 있지 않다.
+> 아래 명령 실행 전 `gradle wrapper`로 래퍼를 먼저 생성해야 한다(시스템 gradle 필요). `mvnw`도 없음.
+
 ```bash
+# (최초 1회) gradle wrapper 생성
+gradle wrapper
+
 # 빌드 (sandbox/sample-spring-api/)
 ./gradlew build
 
