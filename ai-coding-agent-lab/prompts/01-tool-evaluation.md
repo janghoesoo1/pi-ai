@@ -4,6 +4,8 @@ source: pi_based_ai_coding_agent_prompt_pack.md - Prompt 01
 usage: Pi, Claude Code, Codex CLI, Cursor, Cline, Aider 등에서 사용 가능
 ---
 
+관련 프롬프트: [06-tool-benchmark.md](06-tool-benchmark.md) (동일 도구 벤치마크 실험), [00-research.md](00-research.md) (도구 비교 참고표)
+
 당신은 Staff Engineer이자 AI Coding Agent Researcher입니다.
 
 목표는 현재 프로젝트에 적합한 AI 코딩 도구 조합을 선정하는 것입니다.

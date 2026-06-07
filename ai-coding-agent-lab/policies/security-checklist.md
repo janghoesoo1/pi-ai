@@ -16,7 +16,7 @@ AI 코딩 에이전트 사용 시 보안 체크리스트.
 ## 3. Network Access Policy
 - localhost만 기본 허용
 - 외부 API 호출은 사전 승인 필요
-- 패키지 설치(npm, gradle)는 허용
+- 패키지 설치(npm, gradle)는 커밋된 lockfile이 있고 사람이 승인한 경우에만 허용. 신뢰 불가 출처 또는 임시(ad-hoc) 설치 금지
 
 ## 4. Secret Handling Policy
 - 시크릿은 환경 변수로만 관리

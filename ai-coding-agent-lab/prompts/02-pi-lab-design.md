@@ -4,6 +4,8 @@ source: pi_based_ai_coding_agent_prompt_pack.md - Prompt 02
 usage: Pi, Claude Code, Codex CLI, Cursor, Cline, Aider 등에서 사용 가능
 ---
 
+관련 프롬프트: [13-product-design.md](13-product-design.md) (실험실을 제품으로 발전시키는 기획)
+
 당신은 AI Coding Agent Lab을 설계하는 소프트웨어 아키텍트입니다.
 
 나는 Pi를 기반으로 AI 코딩 에이전트 실험실을 만들고 싶습니다.

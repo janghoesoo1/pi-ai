@@ -15,3 +15,5 @@
 | 2026-06-05 | bf AGENTS.md는 작성하되 회사 리모트에 푸시하지 않음 | 운영/회사 코드 가드레일(읽기·제안만) | `docs/agents-md` 로컬 브랜치 커밋, 푸시·머지는 사람이 결정 |
 | 2026-06-05 | pact PR #4·#5·#6 머지 완료, harness 근본 버그(#6) 수정 | 검증된 개인 repo 변경 | main이 빌드복구+room+harness수정 반영. pact는 안정 상태 |
 | 2026-06-05 | bf 푸시 시도 → 사내 GitLab pre-receive 훅 500 거부 → 우회 안 함 | 회사 인프라 정책 존중 | bf AGENTS.md는 로컬 커밋 유지, 사람이 정식 프로세스로 푸시 |
+| 2026-06-07 | **가드레일 강제화: PreToolUse hook(`.claude/hooks/deny-guard.py`) 도입** | "가드레일은 코드·설정에, 프롬프트는 보안 경계가 아니다" 원칙을 산문→실제 강제점으로 전환(감사 H1) | Bash 명령을 런타임에 정규식 검사해 denied-commands 위반 시 exit 2로 차단. PoC(완전 샌드박싱 아님), 패턴은 policies/denied-commands.md와 동기화. 5개 차단/허용 케이스 테스트 통과 |
+| 2026-06-07 | **정밀 감사(병렬 4분야) 후 문서 정합성·정책·프롬프트 일괄 정정** | README stale 파일명, MySQL/H2 오기, denied-commands 누락(공급망·sudo 등), frontmatter 불일치 등 발견 | README/AGENTS/lab-overview 정정 + denied-commands 3개 섹션 추가 + 프롬프트 frontmatter 표준화. eval 무결성은 양호 확인 |

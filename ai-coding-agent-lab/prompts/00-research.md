@@ -4,6 +4,8 @@ source: pi_based_ai_coding_agent_prompt_pack.md - 섹션 1
 usage: 프롬프트가 아닌 참고 문서. Pi 및 주변 AI 코딩 에이전트 도구 비교표.
 ---
 
+관련 프롬프트: [01-tool-evaluation.md](01-tool-evaluation.md) (도구 선정 분석), [06-tool-benchmark.md](06-tool-benchmark.md) (도구 벤치마크 실험)
+
 | 도구 | 성격 | 강점 | 주의점 | Pi 기반 실험에 가져올 점 |
 |---|---|---|---|---|
 | Pi | 미니멀 터미널 agent harness | 확장성, provider 추상화, prompt template, skill, package | 내장 권한 시스템이 약함. sandbox 필요 | 커스텀 agent runtime 학습의 중심 |

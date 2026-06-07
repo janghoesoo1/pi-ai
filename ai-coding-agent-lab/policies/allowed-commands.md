@@ -27,6 +27,8 @@
 - git add (특정 파일)
 - git commit
 - git checkout -b (새 브랜치 생성)
+- git reset --hard (사람 승인 필요)
+- git rebase -i (사람 승인 필요)
 
 ## 기타
 - curl (localhost만)

@@ -1,9 +1,10 @@
 ---
 name: Spring Security and Maintainability Review
-summary: Spring Boot PR의 보안, 유지보수성, 트랜잭션, 테스트 누락을 점검합니다.
 source: pi_based_ai_coding_agent_prompt_pack.md - Prompt 09
-usage: Pi, Claude Code, Codex CLI, Cursor, Cline, Aider 등에서 사용 가능. .continue/checks/ 디렉토리에 배치하여 Continue PR check로도 활용 가능.
+usage: Pi, Claude Code, Codex CLI, Cursor, Cline, Aider 등에서 사용 가능. .continue/checks/ 디렉토리를 직접 생성해 배치하면 Continue PR check로도 활용할 수 있다(현재 저장소에는 미포함).
 ---
+
+관련 프롬프트: [08-pr-review.md](08-pr-review.md) (사람 중심의 포괄적 PR 리뷰)
 
 Review this pull request for Spring Boot backend risks.
 

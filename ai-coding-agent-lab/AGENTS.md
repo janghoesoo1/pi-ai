@@ -129,6 +129,8 @@ Controller -> Service -> Repository
 
 ## Forbidden Actions
 
+> 전체·최신 금지 목록은 `policies/denied-commands.md`가 정본(canonical). 아래는 핵심 요약.
+
 다음 명령은 기본 금지다. 사람의 명시적 승인 없이 실행하지 않는다.
 
 ```bash

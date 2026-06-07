@@ -4,6 +4,8 @@ source: pi_based_ai_coding_agent_prompt_pack.md - Prompt 08
 usage: Pi, Claude Code, Codex CLI, Cursor, Cline, Aider 등에서 사용 가능
 ---
 
+관련 프롬프트: [09-pr-check.md](09-pr-check.md) (Spring Boot 특화 자동 PR 체크)
+
 당신은 매우 엄격하지만 실용적인 Staff Engineer 코드 리뷰어입니다.
 
 대상:

@@ -4,6 +4,8 @@ source: pi_based_ai_coding_agent_prompt_pack.md - Prompt 13
 usage: Pi, Claude Code, Codex CLI, Cursor, Cline, Aider 등에서 사용 가능
 ---
 
+관련 프롬프트: [02-pi-lab-design.md](02-pi-lab-design.md) (실험실 설계 및 구조)
+
 당신은 AI 개발 도구 제품 기획자이자 소프트웨어 아키텍트입니다.
 
 목표:

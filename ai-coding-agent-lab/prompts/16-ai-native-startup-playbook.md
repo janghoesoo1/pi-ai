@@ -459,7 +459,7 @@ AI-네이티브 스타트업은 **매주 운영 체계를 개선**한다. 처음
 |-------------|-------------------|
 | 컨텍스트 시스템 | `AGENTS.md` + `policies/` + `prompts/` |
 | 스킬 인코딩 | `prompts/01~15` (반복 작업을 재사용 지침으로) |
-| eval | `experiments/` 템플릿의 점수 기준 (정확성, 변경 통제, 테스트 품질, 안전성) |
+| eval | `experiments/` 템플릿의 점수 기준 (정확성, 변경 통제, 테스트 품질, 설명 품질, 안전성) |
 | 하네스 6단계 | `policies/security-checklist.md` (Preflight/Approve/Execute/Verify/Log) |
 | 자율성 레벨 | `policies/allowed-commands.md` + `denied-commands.md` |
 | 업무 매핑 | `prompts/00-research.md` (도구 비교표) |
