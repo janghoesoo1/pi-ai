@@ -24,14 +24,16 @@ usage: 모든 실제 작업의 진입점. 메인 에이전트가 이 스킬로 6
 1. **Preflight**
    - `AGENTS.md` + `policies/denied-commands.md` 로드. 금지 명령 확인.
    - 작업의 자율성 레벨(L1~L4)을 판정한다. (OPERATING-GUIDE §1 표 기준)
-   - 대상이 회사 코드(bf/*)인가 개인 코드(pact)인가 → 가드레일 강도 결정.
+   - **작업 대상 위치 확인 (cross-folder 금지):** 이 lab 세션에서는 lab 자산(`ai-coding-agent-lab/`, `.claude/`)만 수정한다. 주력 프로젝트(pact-conference, bf/* 등) 코드 작업은 **그 프로젝트 폴더에서 별도 세션**으로 수행한다. lab 밖 파일 쓰기는 `path-guard.py` hook이 차단한다. lab의 산출물(AGENTS.md·프롬프트팩·가드레일)을 주력 프로젝트로 **이식**하는 것은 그 프로젝트 세션에서 한다.
 
 2. **Plan**
    - 단일 경로면 → [14-plan-only.md](14-plan-only.md)
    - 대안 비교가 필요한 의사결정/설계면 → [20-judge-panel.md](20-judge-panel.md)
 
 3. **Approve**
-   - L1/L2 작업은 반드시 사람 승인. 여기서 멈추고 사람에게 넘긴다.
+   - **L1(사람 전용): AI는 Execute하지 않는다.** 계획·분석까지만 제공하고 실행 자체를 사람에게 넘긴다(아키텍처 결정·MCP 설계·보안 정책 수립 등).
+   - **L2: 사람 승인 후에만 AI가 Execute한다.** 승인 없이 4단계로 넘어가지 않는다.
+   - L3/L4는 감독/한계 내 자율 실행.
 
 4. **Execute**
    - [15-minimal-change.md](15-minimal-change.md)로 최소 변경 실행.
@@ -51,6 +53,7 @@ usage: 모든 실제 작업의 진입점. 메인 에이전트가 이 스킬로 6
 ## 단계별 진행 (1~6)
 ## 각 단계에서 호출한 스킬
 ## 현재 멈춘 지점 (승인 대기 / 진행 중 / 완료)
+## 검토하지 못한 부분 (무성 절단 금지)
 ## 다음 행동
 
 제약:

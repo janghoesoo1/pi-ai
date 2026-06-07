@@ -9,6 +9,15 @@
             "command": "python3 \"$CLAUDE_PROJECT_DIR/.claude/hooks/deny-guard.py\""
           }
         ]
+      },
+      {
+        "matcher": "Edit|Write|NotebookEdit|MultiEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"$CLAUDE_PROJECT_DIR/.claude/hooks/path-guard.py\""
+          }
+        ]
       }
     ]
   }

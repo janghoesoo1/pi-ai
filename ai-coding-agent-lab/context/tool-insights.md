@@ -11,7 +11,10 @@
 - (2026-06-05) AGENTS.md를 먼저 코드에서 역도출 → 이후 작업 품질·일관성 상승. lab→주력 프로젝트 이식의 핵심 자산.
 
 ## Codex CLI
-- (실험 후 기록)
+- (2026-06-07) **codex-cli 0.130.0 설치·실동작 확인.** `codex exec --sandbox read-only "<prompt>"`로 비대화형 second opinion 가능. lab 산출물(prompts 17~22)을 적대적 교차검증시켜 실제 결함 4건(High) 발견 — 19-cross-verify의 첫 dogfooding 성공.
+- **옵션 사실 정정**: `codex exec`에는 `-s/--sandbox`가 있으나 **`codex review`에는 `--sandbox`가 없다**(git 기반·읽기 위주). WebFetch 요약을 믿고 `codex review --sandbox`로 썼다가 codex 자기검증에 걸림 → 로컬 `--help`로 확인 후 정정.
+- 강점: 다른 모델 관점이라 Claude 자기검토가 놓친 결함(L1 실행 위험, 가드레일 충돌, 근거 부족)을 잡음. 교차검증 자산으로 유지 가치 1차 확인.
+- 주의: codex 실행 시 sandbox에서 `git`/`xcrun` temp 접근 경고 다수 출력(기능엔 무해). verbose 로그가 커서(1MB+) 결과는 tail로 회수.
 
 ## Aider
 - (실험 후 기록)
