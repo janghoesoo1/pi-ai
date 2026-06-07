@@ -19,6 +19,7 @@ lab은 "독립 샌드박스 실험실"이 아니라 **주력 프로젝트의 AI 
 ## 현재 상태
 - 실험실 구조 생성 완료 (2026-06-05)
 - 프롬프트 팩 16개 (00~15) + AI-네이티브 플레이북 (16) 준비 완료
+- **하네스 엔지니어링 Q&A(황민호 수석) 갭 분석 → 동적 운영 스킬 6개 추가 (2026-06-07): 17-agent-1on1·18-meta-tune·19-cross-verify·20-judge-panel·21-orchestrator·22-verification-patterns. AGENTS.md에 모델 티어링 절 추가. → `experiments/2026-06-07-harness-engineering-gap.md`**
 - sandbox/sample-spring-api·sample-react-app 생성 완료 — 단, **`sandbox/sample-*`만 빌드 환경 미비**(gradle wrapper jar·JDK 등록 문제)로 그대로는 빌드 불가. (주력 pact-conference 빌드는 복구 완료·그린)
 - 도구 가용성: `claude`·`codex` 설치됨 / `pi`·`aider` 미설치 → "Pi vs Aider" 실험은 현재 불가
 - 첫 다리: pact-conference에 코드 기반 AGENTS.md 생성·검증 완료
@@ -35,3 +36,5 @@ lab은 "독립 샌드박스 실험실"이 아니라 **주력 프로젝트의 AI 
 - bf/workspace: 보수적 가드레일부터 수립 후 읽기·제안 워크플로 도입. bf/ata-next-kotlin: 생성된 AGENTS.md 기반 첫 읽기·제안 워크플로
 - ~~context/tool-insights.md 채우기~~(Claude Code/harness.sh 섹션 채움 완료; Codex CLI 섹션은 실험 후 보강), eval 기준 정립
 - **가드레일 강제화(L1·설계 필요)**: 현재 정책은 산문뿐 — PreToolUse blocklist hook 등 실제 강제점 1개 이상 도입 또는 문서를 advisory로 명시
+- **신규 스킬(17~22) 실전 검증**: 다음 pact-conference 작업을 `21-orchestrator.md`로 구동 + `19-cross-verify.md`로 codex 교차검증 1회 → eval 누적
+- **자가 개선 루프(갭 #6)**: 수용률<70% 트리거 자동화. OMC `autoresearch` 연결 PoC (카파시 AutoResearch 스타일)
