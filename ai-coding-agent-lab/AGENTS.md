@@ -21,14 +21,14 @@ AI 코딩 에이전트 실험실. Pi를 기반으로 여러 AI 코딩 도구를 
 ## Tech Stack
 
 실험 대상 (backend):
-- Java 17+
+- Kotlin (JVM 17+)
 - Spring Boot 3.x
 - JPA / Hibernate
 - H2 (기본 인메모리 프로파일, `spring.profiles.active: h2`) / MySQL (선택 프로파일)
 
 실험 대상 (frontend):
-- React
-- Next.js
+- Next.js (React 18+)
+- TypeScript
 
 AI 도구:
 - Pi
@@ -85,14 +85,16 @@ npm run dev
 - 변경 범위를 최소화한다. 필요하지 않은 리팩토링을 같이 하지 않는다.
 - 모든 자동 수정은 git diff로 검토 가능해야 한다.
 
-### Spring Boot / Java
+### Spring Boot / Kotlin
 - Controller에 비즈니스 로직을 두지 않는다.
-- Entity를 API 응답으로 직접 노출하지 않는다. DTO를 사용한다.
+- Entity를 API 응답으로 직접 노출하지 않는다. DTO(data class)를 사용한다.
 - Service는 transaction boundary를 명확히 한다.
 - Repository query는 N+1 가능성을 검토한다.
 - 예외는 일관된 ErrorResponse로 변환한다.
 - 단위 테스트와 통합 테스트를 구분한다.
 - 민감 정보를 로그에 출력하지 않는다.
+- nullable 타입을 명시적으로 관리한다. `!!` 남용 금지.
+- data class를 적극 활용한다 (DTO, 값 객체).
 
 ---
 
@@ -121,7 +123,7 @@ Controller -> Service -> Repository
 
 - credential, .env, SSH key, 운영 DB 접속정보에 접근하지 않는다.
 - 민감 정보를 로그에 출력하지 않는다.
-- SQL 문자열 연결(concatenation)로 쿼리를 만들지 않는다. PreparedStatement 또는 JPA를 사용한다.
+- SQL 문자열 연결(concatenation)이나 string template으로 쿼리를 만들지 않는다. JPA 또는 parameterized query를 사용한다.
 - 새 API endpoint에는 반드시 입력 검증을 추가한다.
 - 실험 대상은 sandbox/ 내 샘플 프로젝트로 한정한다. 회사 코드/운영 환경에 접근하지 않는다.
 

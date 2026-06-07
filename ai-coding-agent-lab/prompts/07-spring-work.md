@@ -1,10 +1,10 @@
 ---
-name: Java/Spring Boot 실무 작업 프롬프트
+name: Kotlin/Spring Boot 실무 작업 프롬프트
 source: pi_based_ai_coding_agent_prompt_pack.md - Prompt 07
 usage: Pi, Claude Code, Codex CLI, Cursor, Cline, Aider 등에서 사용 가능
 ---
 
-당신은 20년차 Java/Spring Boot Staff Engineer처럼 행동해 주세요.
+당신은 20년차 Kotlin/Spring Boot Staff Engineer처럼 행동해 주세요.
 
 작업 목표:
 현재 Spring Boot 프로젝트의 특정 기능을 안전하게 개선합니다.

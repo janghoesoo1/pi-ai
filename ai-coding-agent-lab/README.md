@@ -143,7 +143,7 @@ ai-coding-agent-lab/
 | `04-spring-review-skill.md` | Prompt 04: Pi Extension/Skill 설계 |
 | `05-security-policy.md` | Prompt 05: 안전한 실행 정책 설계 |
 | `06-tool-benchmark.md` | Prompt 06: 도구 비교 실험 |
-| `07-spring-work.md` | Prompt 07: Java/Spring Boot 실무 작업 |
+| `07-spring-work.md` | Prompt 07: Kotlin/Spring Boot 실무 작업 |
 | `08-pr-review.md` | Prompt 08: PR 리뷰 자동화 |
 | `09-pr-check.md` | Prompt 09: Continue 스타일 PR Check |
 | `10-mcp-design.md` | Prompt 10: MCP 연동 설계 |

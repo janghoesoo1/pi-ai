@@ -4,10 +4,10 @@ AI 코딩 에이전트 실험용 Spring Boot REST API 샘플 프로젝트.
 
 ## 스펙
 - Spring Boot 3.x
-- Java 17+
+- Kotlin (JVM 17+)
 - JPA (Hibernate)
-- MySQL
-- Gradle
+- H2 (기본) / MySQL (선택)
+- Gradle (Kotlin DSL)
 
 ## 도메인
 - User
